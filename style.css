@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ff, #dbeafe);
+  color: #252b48;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #5746a8;
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+#tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 12px;
+  padding: 16px;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(37, 43, 72, 0.15);
+}
+#tabuleiro button {
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  border: none;
+  border-radius: 16px;
+  background: #dcd8f5;
+  box-shadow: 0 6px 0 #b9b1e5;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#tabuleiro button:hover:not(:disabled) {
+  transform: translateY(-4px);
+  background: #cbc3f0;
+}
+#reiniciar {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  background: #5746a8;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #392a7f;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#reiniciar:hover {
+  background: #45368f;
+  transform: translateY(-2px);
+}
+#mensagem {
+  min-height: 26px;
+  margin: 8px 0;
+  color: #5746a8;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 380px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  #tabuleiro {
+    grid-template-columns: repeat(3, 68px);
+    gap: 8px;
+    padding: 12px;
+  }
+
+  #tabuleiro button {
+    width: 68px;
+    height: 68px;
+    font-size: 28px;
+  }
+}
+#tabuleiro button.encontrada {
+  background: #b9e8c9;
+  box-shadow: 0 6px 0 #83c99c;
+}
+#tentativas {
+  display: inline-block;
+  min-width: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: white;
+  color: #5746a8;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(37, 43, 72, 0.12);
+}
